@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { PrismaClient } from '@prisma/client';
+import userRoutes from './routes/userRoutes';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.get('/api/ping', (_req, res) => {
   res.json({ message: 'pong from backend 🎯' });
 });
+app.use('/api', userRoutes);
 
 // Start the server
 app.listen(PORT, () => {
