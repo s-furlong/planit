@@ -12,7 +12,7 @@ app.use('/api', userRoutes);
 let createdUserId: number;
 
 beforeAll(async () => {
-  await prisma.user.deleteMany(); // clean slate
+  await prisma.user.deleteMany();
 });
 
 afterAll(async () => {

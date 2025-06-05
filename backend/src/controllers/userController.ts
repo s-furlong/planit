@@ -134,7 +134,7 @@ export const deleteUser = async (req: Request, res: Response) => {
       where: { id: userId },
     });
 
-    return res.status(204).send(); // No Content
+    return res.status(204).send();
   } catch (error: any) {
     console.error('Error deleting user:', error);
     return res.status(500).json({ error: 'Failed to delete user' });
